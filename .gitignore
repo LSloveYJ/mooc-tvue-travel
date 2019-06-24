@@ -14,3 +14,4 @@ static/mock
 *.ntvs*
 *.njsproj
 *.sln
+/static/mock/index.json
