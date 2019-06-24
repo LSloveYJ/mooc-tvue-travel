@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="title">
-      热销推荐
+      {{title}}
     </div>
     <ul>
       <li class="item border-bottom" v-for="item in items" :key="item.id">
@@ -21,12 +21,13 @@
     name: 'Recommend',
     data() {
       return {
+        title: '热销推荐',
         items: [
           {
             id: 1,
             src: 'http://img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_250x250_b8d94d62.jpg',
             title: '国际旅游',
-            desc: '天天实惠,天天实惠,天天实惠',
+            desc: '天天实惠,天天实惠,天天实惠,天天实惠,天天实惠,天天实惠',
           }, {
             id: 2,
             src: 'http://img1.qunarzz.com/sight/p0/1505/f5/f5f45e1a83537bcb.water.jpg_250x250_63e3520a.jpg',
@@ -99,7 +100,7 @@
         border-radius .06rem
         color #fff
         text-align center
-        padding 0  .2rem
+        padding 0 .2rem
 
 
 </style>
