@@ -2,10 +2,9 @@
   <div>
     <home-header></home-header>
     <home-swiper></home-swiper>
-    <home-icons></home-icons>
+    <home-icons :iconList="iconList"></home-icons>
     <home-recommend :recommend="recommend"></home-recommend>
-    <home-weekend  :weekend="weekend"></home-weekend>
-    {{getHomeInfo()}}
+    <home-weekend :weekend="weekend"></home-weekend>
   </div>
 </template>
 
@@ -30,7 +29,11 @@
       return {
         weekend: '',
         recommend: '',
+        iconList: '',
       };
+    },
+    created() {
+      this.getHomeInfo();
     },
     methods: {
       getHomeInfo() {
@@ -40,6 +43,7 @@
       getHomeInfoSucc(res) {
         this.weekend = res.data.weekend;
         this.recommend = res.data.recommend;
+        this.iconList = res.data.iconList;
       },
     },
   };
