@@ -3,8 +3,8 @@
     <home-header></home-header>
     <home-swiper></home-swiper>
     <home-icons></home-icons>
-    <home-recommend></home-recommend>
-    <home-weekend></home-weekend>
+    <home-recommend :recommend="recommend"></home-recommend>
+    <home-weekend  :weekend="weekend"></home-weekend>
     {{getHomeInfo()}}
   </div>
 </template>
@@ -26,13 +26,20 @@
       HomeRecommend,
       HomeWeekend,
     },
+    data() {
+      return {
+        weekend: '',
+        recommend: '',
+      };
+    },
     methods: {
       getHomeInfo() {
         axios.get('/api/index.json')
           .then(this.getHomeInfoSucc);
       },
       getHomeInfoSucc(res) {
-        console.log(res);
+        this.weekend = res.data.weekend;
+        this.recommend = res.data.recommend;
       },
     },
   };

@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="title">
-      {{title}}
+      {{recommend.title}}
     </div>
     <ul>
-      <li class="item border-bottom" v-for="item in items" :key="item.id">
+      <li class="item border-bottom" v-for="item in recommend.items" :key="item.id">
         <img class="item-img" :src="item.src"/>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -19,44 +19,7 @@
 <script>
   export default {
     name: 'Recommend',
-    data() {
-      return {
-        title: '热销推荐',
-        items: [
-          {
-            id: 1,
-            src: 'http://img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_250x250_b8d94d62.jpg',
-            title: '国际旅游',
-            desc: '天天实惠,天天实惠,天天实惠,天天实惠,天天实惠,天天实惠',
-          }, {
-            id: 2,
-            src: 'http://img1.qunarzz.com/sight/p0/1505/f5/f5f45e1a83537bcb.water.jpg_250x250_63e3520a.jpg',
-            title: '海岛旅游',
-            desc: '天天实惠,天天实惠,天天实惠',
-          }, {
-            id: 3,
-            src: 'http://img1.qunarzz.com/sight/p0/1604/78/78873494f26e554090.water.jpg_250x250_0565d534.jpg',
-            title: '兵马俑旅游',
-            desc: '天天实惠,天天实惠,天天实惠',
-          }, {
-            id: 4,
-            src: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-            title: '日本双飞旅游',
-            desc: '天天实惠,天天实惠,天天实惠',
-          }, {
-            id: 5,
-            src: 'http://img1.qunarzz.com/sight/p0/201308/08/41150dacc0e3a0c8c8d65eac.jpg_200x200_c62292e9.jpg',
-            title: '日本双飞旅游',
-            desc: '天天实惠,天天实惠,天天实惠',
-          }, {
-            id: 6,
-            src: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-            title: '日本双飞旅游',
-            desc: '天天实惠,天天实惠,天天实惠',
-          },
-        ],
-      };
-    },
+    props: ['recommend'],
   };
 </script>
 
