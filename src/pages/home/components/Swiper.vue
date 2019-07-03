@@ -14,7 +14,8 @@
 
 <script>
   export default {
-    name: 'homeSwiper',
+    name: 'HomeSwiper',
+    props: ['swiperList'],
     data() {
       return {
         swiperOption: {
@@ -23,13 +24,6 @@
           },
           loop: true,
         },
-        swiperList: [{
-          id: 1,
-          img: 'http://source.qunarzz.com/site/images/wns/20190621_dujia_homepage_top_banner_5.jpg',
-        }, {
-          id: 2,
-          img: 'http://source.qunarzz.com/site/images/wns/20190621_qunar_dujia_homepage_2.jpg',
-        }],
       };
     },
   };

@@ -1,7 +1,7 @@
 <template>
   <div>
     <home-header></home-header>
-    <home-swiper></home-swiper>
+    <home-swiper :swiperList="swiperList"></home-swiper>
     <home-icons :iconList="iconList"></home-icons>
     <home-recommend :recommend="recommend"></home-recommend>
     <home-weekend :weekend="weekend"></home-weekend>
@@ -30,9 +30,10 @@
         weekend: '',
         recommend: '',
         iconList: '',
+        swiperList: '',
       };
     },
-    created() {
+    mounted() {
       this.getHomeInfo();
     },
     methods: {
@@ -41,9 +42,13 @@
           .then(this.getHomeInfoSucc);
       },
       getHomeInfoSucc(res) {
-        this.weekend = res.data.weekend;
-        this.recommend = res.data.recommend;
-        this.iconList = res.data.iconList;
+        if (res.data) {
+          const data = res.data;
+          this.weekend = data.weekend;
+          this.recommend = data.recommend;
+          this.iconList = data.iconList;
+          this.swiperList = data.swiperList;
+        }
       },
     },
   };
